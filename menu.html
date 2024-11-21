@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mbapplo FC</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        header {
+            background: #000;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .logo img {
+            animation: slideIn 1s forwards;
+            height: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #e60000; /* Изменение цвета текста при наведении */
+            transform: scale(1.1); /* Увеличение размера текста при наведении */
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-actions img {
+            height: 30px;
+            margin-right: 15px;
+        }
+
+        .hero {
+            background: url(back.png) no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            animation: fadeInUp 1s forwards; /* Анимация для заголовка */
+        }
+
+        .hero-content p {
+            font-size: 24px;
+            animation: fadeInUp 1.5s forwards; /* Анимация для текста */
+        }
+
+        button {
+            background: #e60000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            animation: fadeInUp 2s forwards; /* Анимация для кнопки */
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background: #ff4d4d; /* Изменение цвета кнопки при наведении */
+            transform: scale(1.05); /* Увеличение кнопки при наведении */
+        }
+
+        .news {
+            padding: 40px 0;
+        }
+
+        .news h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: fadeIn 1s forwards; /* Анимация для заголовка новостей */
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .news-item {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s;
+            opacity: 0;
+            animation: fadeIn 1s forwards; /* Анимация для карточек новостей */
+        }
+
+        .news-item:hover {
+            transform: scale(1.05); /* Увеличение карточки при наведении */
+        }
+
+        .news-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            animation: zoomIn 0.5s forwards; /* Анимация увеличения изображения */
+        }
+
+        .news-item h3 {
+            margin: 15px 0;
+            animation: fadeIn 1.5s forwards; /* Анимация для заголовка новости */
+        }
+
+        .news-item p {
+            padding: 0 15px;
+            animation: fadeIn 2s forwards; /* Анимация для текста новости */
+        }
+
+        .read-more {
+            display: inline-block;
+            margin: 15px 0;
+            padding: 10px 15px;
+            background: #e60000;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .read-more:hover {
+            background: #ff4d4d; /* Изменение цвета ссылки при наведении */
+            transform: scale(1.1); /* Увеличение ссылки при наведении */
+        }
+
+        footer {
+            background: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Анимации */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards; /* Анимация появления для изображений и ссылок */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="MB.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="galery.html" class="fade-in">ИГРОКИ</a></li>
+                    <li><a href="store.html" class="fade-in">МАГАЗИН</a></li>
+                    <li><a href="video.html" class="fade-in">ВИДЕО</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#"><i class="fas fa-search fade-in"></i></a>
+                <a href="#"><i class="fas fa-question-circle fade-in"></i></a>
+                <a href="#"><i class="fas fa-user fade-in"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero fade-in">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Позитив.</h1>
+                <p>Присоединяйтесь к нам на пути к победе!</p>
+                <button>Подробнее</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="news fade-in">
+        <div class="container">
+            <h2>Последние новости</h2>
+            <div class="news-grid">
+                <div class="news-item">
+                    <img src="news/Fl.jpg" alt="News Image 1">
+                    <h3>ОФИЦИАЛЬНО❗</h3>
+                    <p>Наша команда принимает участие во вновь открывшимся турнире формата 7×7 - "Osetian Football Ligue".</p>
+                    <a href="#" class="read-more">Подробнее</a>
+                </div>
+                <div class="news-item">
+                    <img src="news/gag.jpg" alt="News Image 2">
+                    <h3>ВНИМАНИЕ❗</h3>
+                    <p>Гагиев Азамат вновь получает травму коленей и выбывает примерно на 6 месяцев.</p>
+                    <a href="#" class="read-more">Подробнее</a>
+                </div>
+                <div class="news-item">
+                    <img src="news/Kostia.jpg" alt="News Image 3">
+                    <h3>ОФИЦИАЛЬНО❗</h3>
+                    <p>Бывший игрок нашей команды, Сикоев Константин, покидает расположение клуба. 
+                        Причиной тому стало обоюдное решение "расторгнуть контракт".                  
+                        Пожелаем Косте удачи во всех его начинаниях.</p>
+                    <a href="#" class="read-more">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy 2024 Mbapplo FC. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
