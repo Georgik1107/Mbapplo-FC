@@ -81,7 +81,7 @@
         }
 
         button {
-            background: #e60000;
+            background: #8e23c3;
             color: #fff;
             border: none;
             padding: 10px 20px;
@@ -91,7 +91,7 @@
         }
 
         button:hover {
-            background: #ff4d4d; /* Изменение цвета кнопки при наведении */
+            background: #bc7ddc; /* Изменение цвета кнопки при наведении */
             transform: scale(1.05); /* Увеличение кнопки при наведении */
         }
 
@@ -146,14 +146,14 @@
             display: inline-block;
             margin: 15px 0;
             padding: 10px 15px;
-            background: #e60000;
+            background: #8e23c3;
             color: #fff;
             text-decoration: none;
             transition: background 0.3s, transform 0.3s;
         }
 
         .read-more:hover {
-            background: #ff4d4d; /* Изменение цвета ссылки при наведении */
+            background: #bc7ddc; /* Изменение цвета ссылки при наведении */
             transform: scale(1.1); /* Увеличение ссылки при наведении */
         }
 
@@ -162,6 +162,54 @@
             color: #fff;
             text-align: center;
             padding: 20px 0;
+        }
+
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            font-size: 30px;
+            min-width: 100%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background: #fff;
+            border-radius: 5px;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .btn {
+            background: #8e23c3d1;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #bc7ddcd1;
         }
 
         /* Анимации */
@@ -236,7 +284,7 @@
     <section class="hero fade-in">
         <div class="container">
             <div class="hero-content">
-                <h1>Позитив.</h1>
+                <h1>Mbapplo</h1>
                 <p>Присоединяйтесь к нам на пути к победе!</p>
                 <button>Подробнее</button>
             </div>
@@ -251,13 +299,13 @@
                     <img src="news/Fl.jpg" alt="News Image 1">
                     <h3>ОФИЦИАЛЬНО❗</h3>
                     <p>Наша команда принимает участие во вновь открывшимся турнире формата 7×7 - "Osetian Football Ligue".</p>
-                    <a href="#" class="read-more">Подробнее</a>
+                    <a href="" class="read-more">Подробнее</a>
                 </div>
                 <div class="news-item">
                     <img src="news/gag.jpg" alt="News Image 2">
                     <h3>ВНИМАНИЕ❗</h3>
                     <p>Гагиев Азамат вновь получает травму коленей и выбывает примерно на 6 месяцев.</p>
-                    <a href="#" class="read-more">Подробнее</a>
+                    <a href="" class="read-more">Подробнее</a>
                 </div>
                 <div class="news-item">
                     <img src="news/Kostia.jpg" alt="News Image 3">
@@ -265,16 +313,155 @@
                     <p>Бывший игрок нашей команды, Сикоев Константин, покидает расположение клуба. 
                         Причиной тому стало обоюдное решение "расторгнуть контракт".                  
                         Пожелаем Косте удачи во всех его начинаниях.</p>
-                    <a href="#" class="read-more">Подробнее</a>
+                    <a href="" class="read-more">Подробнее</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <div class="container">
+        <!-- Карусель для прошедших матчей -->
+        <div class="carousel">
+            <h2>Недавние Матчи</h2>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <h3>Mbapplo FC vs Argon</h3>
+                            <p>Дата: 24.11.2024</p>
+                            <p>Счет: 10 - 4</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <h3>Mbapplo FC vs Pride</h3>
+                            <p>Дата: 17.11.2024</p>
+                            <p>Счет: 2 - 8</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-buttons">
+                <button class="btn" id="prevBtn1">&#10094;</button>
+                <button class="btn" id="nextBtn1">&#10095;</button>
+            </div>
+        </div>
+
+        <!-- Карусель для предстоящих матчей -->
+        <div class="carousel">
+            <h2>Предстоящие Матчи</h2>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <h3>Mbapplo FC vs Team F</h3>
+                            <p>Дата: 05.02.2024</p>
+                            <p>Время: 18:00</p>
+                        </div>
+                        <div class="match-card">
+                            <h3>Team G vs Mbapplo FC</h3>
+                            <p>Дата: 12.02.2024</p>
+                            <p>Время: 20:00</p>
+                        </div>
+                        <div class="match-card">
+                            <h3>Mbapplo FC vs Team H</h3>
+                            <p>Дата: 19.02.2024</p>
+                            <p>Время: 16:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="matches-grid">
+                        <div class="match-card">
+                            <h3>Team I vs Mbapplo FC</h3>
+                            <p>Дата: 26.02.2024</p>
+                            <p>Время: 18:00</p>
+                        </div>
+                        <div class="match-card">
+                            <h3>Mbapplo FC vs Team J</h3>
+                            <p>Дата: 05.03.2024</p>
+                            <p>Время: 20:00</p>
+                        </div>
+                    </div>
+                </div>
+                 
+            </div>
+            <div class="carousel-buttons">
+                <button class="btn" id="prevBtn2">&#10094;</button>
+                <button class="btn" id="nextBtn2">&#10095;</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
     <footer>
         <div class="container">
-            <p>&copy 2024 Mbapplo FC. All rights reserved.</p>
+            <p>&copy 2024 Mbapplo FC. All rights reserved. <br>
+            <a href="">Telegram</a> <br>
+            <a href="">VK</a>
+        </p>
         </div>
     </footer>
+
+
+
+
+    <script>
+        // Функции для первой карусели (Недавние матчи)
+        const carouselInner1 = document.querySelectorAll('.carousel-inner')[0];
+        const items1 = carouselInner1.querySelectorAll('.carousel-item');
+        let currentIndex1 = 0;
+
+        function showSlide1(index) {
+            items1.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                }
+            });
+            carouselInner1.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        document.getElementById('nextBtn1').addEventListener('click', () => {
+            currentIndex1 = (currentIndex1 + 1) % items1.length;
+            showSlide1(currentIndex1);
+        });
+
+        document.getElementById('prevBtn1').addEventListener('click', () => {
+            currentIndex1 = (currentIndex1 - 1 + items1.length) % items1.length;
+            showSlide1(currentIndex1);
+        });
+
+        // Функции для второй карусели (Предстоящие матчи)
+        const carouselInner2 = document.querySelectorAll('.carousel-inner')[1];
+        const items2 = carouselInner2.querySelectorAll('.carousel-item');
+        let currentIndex2 = 0;
+
+        function showSlide2(index) {
+            items2.forEach((item, i) => {
+                item.classList.remove('active');
+                if (i === index) {
+                    item.classList.add('active');
+                }
+            });
+            carouselInner2.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        document.getElementById('nextBtn2').addEventListener('click', () => {
+            currentIndex2 = (currentIndex2 + 1) % items2.length;
+            showSlide2(currentIndex2);
+        });
+
+        document.getElementById('prevBtn2').addEventListener('click', () => {
+            currentIndex2 = (currentIndex2 - 1 + items2.length) % items2.length;
+            showSlide2(currentIndex2);
+        });
+    </script>
 </body>
 </html>
